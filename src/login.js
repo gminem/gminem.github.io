@@ -27,7 +27,6 @@ if (existUser !== null) {
 }
 
 function userlogOut() {
-    alert("BYE BYE");
     localStorage.removeItem(USER_NAME);
     window.location.reload();
 }
