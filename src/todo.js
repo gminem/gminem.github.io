@@ -24,7 +24,7 @@ function paintToDo(newTodo) {
     li.id = newTodo.id;
 
     const span = document.createElement("span");
-    span.innerText = newTodo.text;
+    span.innerText = `${newTodo.text} `;
 
     const btn = document.createElement("button");
     btn.innerText = "X";

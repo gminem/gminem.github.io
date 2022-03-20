@@ -3,16 +3,31 @@
   <head>
     <title>Vanilla Challenge</title>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/style.css"/>
   </head>
 
   <body>
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To Do and Press Enter" required/>
-      <h1>test text</h1>
-      <h1>test text22</h1>
-    </form>
-    <ul id="todo-list">
-    </ul>
+    <div id="container">
+      <h1 id="clock">00:00</h1>
+      <div id="login-div">
+        <form id="login-form">
+          <input id="login-input" type="text" placeholder="Write your ID" required/>
+          <span class="hidden" id="login-span"></span>
+        </form>
+      </div>
+      <form id="todo-form">
+        <input id="todo-input" type="text" placeholder="Write a To Do and Press Enter" required/>
+      </form>
+      <ul id="todo-list">
+      </ul>
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <script src="src/background.js"></script>
+    <script src="src/login.js"></script>
+    <script src="src/clock.js"></script>
     <script src="src/todo.js"></script>
     <script src="src/weather.js"></script>
   </body>
