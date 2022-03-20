@@ -1,7 +1,10 @@
+const USER_NAME = "userName";
 const form = document.querySelector("#login-form");
+const loginCon = document.querySelector("#login-con");
 const span = document.querySelector("#login-span");
 const input = document.querySelector("#login-input");
-const existUser =  localStorage.getItem("userName");
+const logoutBtn = document.querySelector("#logout-btn");
+const existUser =  localStorage.getItem(USER_NAME);
 
 function submit(event) {
     event.preventDefault();
@@ -9,13 +12,13 @@ function submit(event) {
 
     userlogin(inputValue);
 
-    localStorage.setItem("userName", inputValue);
+    localStorage.setItem(USER_NAME, inputValue);
 }
 
 function userlogin(inputValue) {
     span.innerText = `HELLO [${inputValue}] !`;
 
-    span.className = "";
+    loginCon.className = "";
     input.className = "hidden";
 }
 
@@ -23,4 +26,11 @@ if (existUser !== null) {
     userlogin(existUser);
 }
 
+function userlogOut() {
+    alert("BYE BYE");
+    localStorage.removeItem(USER_NAME);
+    window.location.reload();
+}
+
 form.addEventListener("submit", submit);
+logoutBtn.addEventListener("click", userlogOut);
